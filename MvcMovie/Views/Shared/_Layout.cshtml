@@ -6,13 +6,16 @@
     <title>@ViewData["Title"] - Movie App</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="icon" href="~/sample.ico"/>
+    <link rel="icon" href="~/sample.ico" />
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                
+
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Movie App</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -22,19 +25,31 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         @*<li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-        </li>*@
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index" target="_blank">Movies</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01"
+                               data-toggle="dropdown" >
+                                DropDown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="#">Privacy</a>
+                                <a class="dropdown-item" asp-controller="Movies" asp-action="Index">Movies</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -44,7 +59,16 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - Movie App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <!-- The social media icon bar -->
+            @*<div class="icon-bar">
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="google"><i class="fa fa-google"></i></a>
+                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+            </div>*@
         </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
