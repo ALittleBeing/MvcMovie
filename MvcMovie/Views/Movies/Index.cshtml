@@ -32,10 +32,10 @@
         <thead class="table-dark">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Movies[0].Title)
+                    @Html.ActionLink(Html.DisplayNameFor(model => model.Movies[0].Title), "Index", new { sortOrder = ViewBag.NameSortParm })
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
+                    @Html.ActionLink(Html.DisplayNameFor(model => model.Movies[0].ReleaseDate),"Index", new { sortOrder = ViewBag.DateSortParm })
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Movies[0].Genre)
@@ -44,7 +44,7 @@
                     @Html.DisplayNameFor(model => model.Movies[0].Rating)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Movies[0].Price)
+                    @Html.ActionLink(Html.DisplayNameFor(model => model.Movies[0].Price),"Index", new { sortOrder = ViewBag.PriceSortParm })
                 </th>
                 <th></th>
             </tr>

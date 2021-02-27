@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MvcMovie.Models.UserViewModel>
+
+@{ 
+    ViewData["Title"] = "Users";
+}
+
+<h1> List of Users</h1>
+
+<div class="col-12 p-3 m-3">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Name)</td>
+                <td>@Html.DisplayNameFor(model => model.UserName)</td>
+                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                <td>@Html.DisplayNameFor(model => model.Role)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() != 0)
+            {
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>No Users Found</tr>
+            }
+        </tbody>
+    </table>
+</div>
